@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RealmExample</string>
+    <string name="idade_18"><![CDATA[Idade < 18]]></string>
+</resources>
