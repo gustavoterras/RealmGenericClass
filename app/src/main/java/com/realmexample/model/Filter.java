@@ -10,6 +10,9 @@ public class Filter {
     private String args1;
     private String args2;
 
+    public Filter() {
+    }
+
     public Filter(int type, String args1, String args2) {
         this.type = type;
         this.args1 = args1;

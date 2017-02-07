@@ -13,6 +13,14 @@ public class Dog extends RealmObject {
     private String name;
     private String color;
 
+    public Dog() {
+    }
+
+    public Dog(String name, String color) {
+        this.name = name;
+        this.color = color;
+    }
+
     public String getName() {
         return name;
     }

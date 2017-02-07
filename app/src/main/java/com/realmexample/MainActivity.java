@@ -21,9 +21,6 @@ import io.realm.RealmList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener{
 
-    private static final String TAG = MainActivity.class.getSimpleName();
-    DataManager<Person> personDataManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Realm.init(this);
         RealmConfiguration config = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(config);
-
-        personDataManager = new DataManager<>();
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(this);
@@ -50,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText dogColor = (EditText) findViewById(R.id.dog_color);
 
         Person p = new Person();
-        p.setId(personDataManager.getNextId(Person.class));
+        p.setId(DataManager.getNextId(Person.class));
         p.setName(name.getText().toString());
         p.setAge(Integer.parseInt(age.getText().toString()));
 
@@ -60,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         p.setDogs(new RealmList<>(dog));
 
-        personDataManager.save(p);
+        DataManager.save(p);
 
         populateList(null);
     }
@@ -69,17 +64,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         PersonAdapter adapter;
         if(filter == null)
-            adapter = new PersonAdapter(this, personDataManager.selectAll(Person.class), true);
+            adapter = new PersonAdapter(this, DataManager.selectAll(Person.class), true);
         else {
             switch (filter.getType()) {
                 case 1:
-                    adapter = new PersonAdapter(this, personDataManager.selectEqualsTo(Person.class, filter.getArgs1(), filter.getArgs2()), true);
+                    adapter = new PersonAdapter(this, DataManager.selectEqualsTo(Person.class, filter.getArgs1(), filter.getArgs2()), true);
                     break;
                 case 2:
-                    adapter = new PersonAdapter(this, personDataManager.selectLessThan(Person.class, filter.getArgs1(), Integer.parseInt(filter.getArgs2())), true);
+                    adapter = new PersonAdapter(this, DataManager.selectLessThan(Person.class, filter.getArgs1(), Integer.parseInt(filter.getArgs2())), true);
                     break;
                 default:
-                    adapter = new PersonAdapter(this, personDataManager.selectAll(Person.class), true);
+                    adapter = new PersonAdapter(this, DataManager.selectAll(Person.class), true);
             }
         }
 

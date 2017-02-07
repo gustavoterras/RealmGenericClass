@@ -16,6 +16,16 @@ public class Person extends RealmObject {
     private int age;
     private RealmList<Dog> dogs;
 
+    public Person() {
+    }
+
+    public Person(long id, String name, int age, RealmList<Dog> dogs) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.dogs = dogs;
+    }
+
     public long getId() {
         return id;
     }

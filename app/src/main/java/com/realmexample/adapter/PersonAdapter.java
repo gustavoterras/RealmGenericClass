@@ -45,9 +45,7 @@ public class PersonAdapter extends RealmRecyclerViewAdapter<Person, PersonAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                DataManager<Person> personDataManager = new DataManager<>();
-                Person p = personDataManager.selectById(person.getId(), Person.class);
+                Person p = DataManager.selectById(person.getId(), Person.class);
 
                 Toast.makeText(context, String.format("id:%s name:%s age:%s", p.getId(), p.getName(), p.getAge()), Toast.LENGTH_SHORT).show();
             }
