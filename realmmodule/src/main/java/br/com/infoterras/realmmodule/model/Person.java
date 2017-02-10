@@ -1,4 +1,4 @@
-package com.realmexample.model;
+package br.com.infoterras.realmmodule.model;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;

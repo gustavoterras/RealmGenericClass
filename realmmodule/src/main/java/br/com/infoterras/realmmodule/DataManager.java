@@ -1,11 +1,11 @@
-package com.realmexample.dao;
+package br.com.infoterras.realmmodule;
 
 import io.realm.Realm;
 import io.realm.RealmModel;
 import io.realm.RealmResults;
 
 /**
- * Created by Gustavo on 31/01/2017.
+ * Created by Gustavo on 10/02/2017.
  */
 
 public class DataManager {

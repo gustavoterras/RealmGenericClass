@@ -1,4 +1,4 @@
-package com.realmexample.model;
+package br.com.infoterras.realmmodule.model;
 
 /**
  * Created by Gustavo on 31/01/2017.

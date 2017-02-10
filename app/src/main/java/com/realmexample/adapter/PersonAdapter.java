@@ -10,9 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.realmexample.R;
-import com.realmexample.dao.DataManager;
-import com.realmexample.model.Person;
+import br.com.infoterras.realmmodule.model.Person;
 
+import br.com.infoterras.realmmodule.DataManager;
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
 

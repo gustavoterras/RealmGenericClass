@@ -6,17 +6,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.realmexample.adapter.PersonAdapter;
-import com.realmexample.dao.DataManager;
-import com.realmexample.model.Dog;
-import com.realmexample.model.Filter;
-import com.realmexample.model.Person;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
+
+import br.com.infoterras.realmmodule.model.Dog;
+import br.com.infoterras.realmmodule.model.Filter;
+import br.com.infoterras.realmmodule.model.Person;
+
+import br.com.infoterras.realmmodule.DataManager;
 import io.realm.RealmList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener{
@@ -25,10 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Realm.init(this);
-        RealmConfiguration config = new RealmConfiguration.Builder().build();
-        Realm.setDefaultConfiguration(config);
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(this);

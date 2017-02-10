@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RealmExample.iml" filepath="$PROJECT_DIR$/RealmExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realmmodule/realmmodule.iml" filepath="$PROJECT_DIR$/realmmodule/realmmodule.iml" />
     </modules>
   </component>
 </project>
